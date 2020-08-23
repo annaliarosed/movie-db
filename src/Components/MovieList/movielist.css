@@ -1,0 +1,36 @@
+#no-photo {
+    width: 185px;
+    height: 275px;
+  }  
+
+.movie-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .movie {
+    margin: 10px;
+    max-width: 190px;
+    width: 100%;
+  }
+  
+  .movie img {
+    height: 100%;
+    max-height: 264px;
+    border-radius: 5px;
+    border: 2px solid #4b8978;
+  }
+  
+  .movie-title {
+    font-family: sans-serif;
+    margin-bottom: 0;
+    font-weight: bold;
+  }
+  
+  .movie-release-date {
+    font-family: sans-serif;
+    margin-bottom: 0;
+  }
+  

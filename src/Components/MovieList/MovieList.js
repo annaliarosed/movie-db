@@ -1,9 +1,10 @@
 import React from "react";
 import Movie from "./Movie";
+import "./movielist.css";
 
 const MovieList = (props) => {
   return (
-    <div>
+    <>
       <div className="movie-container">
         {props.movies.map((movie, index) => {
           return (
@@ -13,11 +14,11 @@ const MovieList = (props) => {
               originalTitle={movie.original_title}
               releaseDate={movie.release_date}
             />
-          )
+          );
         })}
       </div>
-    </div>
-  )
+    </>
+  );
 };
 
 export default MovieList;

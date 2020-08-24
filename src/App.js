@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import SearchBar from "./Components/SearchBar/SearchBar.js";
 import MovieList from "./Components/MovieList/MovieList.js";
 import Header from "./Components/Header/Header.js";
+import TrendList from "./Components/TrendList/TrendList";
 
 const App = () => {
   const APIKEY = "3aece1730ec57334758cdeb57c0d6adb";
@@ -37,6 +38,7 @@ const App = () => {
         searchValue={searchValue}
         setSearchValue={setSearchValue}
       />
+      <TrendList api={APIKEY} />
       <MovieList movies={movies} />
     </>
   );

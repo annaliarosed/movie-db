@@ -5,6 +5,7 @@ import "./movielist.css";
 const MovieList = (props) => {
   return (
     <>
+      {props.movies.length > 0 && <h1>Search Results</h1>}
       <div className="movie-container">
         {props.movies.map((movie, index) => {
           return (

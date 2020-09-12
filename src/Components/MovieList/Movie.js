@@ -1,25 +1,30 @@
 import React from "react";
 import moment from "moment";
+import { Link } from "react-router-dom";
 
-const Movie = (props) => {
-  const releaseDate = moment(props.releaseDate).format(`MMM D, YYYY`);
+const Movie = ({ releaseDate, image, originalTitle, id }) => {
+  const formattedReleaseDate = moment(releaseDate).format(`MMM D, YYYY`);
 
   return (
     <div className="movie">
-      {props.image == null ? (
-        <img
-          id="no-photo"
-          src={`https://s3-ap-southeast-1.amazonaws.com/upcode/static/default-image.jpg`}
-          alt="fghjhg"
-        />
-      ) : (
-        <img
-          src={`https://image.tmdb.org/t/p/w185${props.image}`}
-          alt="fghjhg"
-        />
-      )}
-      <p>{props.originalTitle}</p>
-      <p>{releaseDate}</p>
+      <Link to={`/Components/${id}`}>
+        {image == null ? (
+          <img
+            id="no-photo"
+            src={`https://s3-ap-southeast-1.amazonaws.com/upcode/static/default-image.jpg`}
+            alt="fghjhg"
+          />
+        ) : (
+          <img
+            src={`https://image.tmdb.org/t/p/w185${image}`}
+            alt="movie poster"
+          />
+        )}
+      </Link>
+      <Link to={`/Components/${id}`}>
+        <p className="movie-title">{originalTitle}</p>
+      </Link>
+      <p className="movie-release-date">{formattedReleaseDate}</p>
     </div>
   );
 };

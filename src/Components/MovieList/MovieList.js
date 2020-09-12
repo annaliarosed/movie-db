@@ -14,6 +14,7 @@ const MovieList = (props) => {
               image={movie.poster_path}
               originalTitle={movie.original_title}
               releaseDate={movie.release_date}
+              id={movie.id}
             />
           );
         })}

@@ -3,6 +3,10 @@
   height: 275px;
 }
 
+.search-results {
+  padding-top: 50px;
+}
+
 .movie-container {
   margin-top: 20px;
   display: flex;
@@ -34,5 +38,3 @@
   font-family: sans-serif;
   margin-bottom: 0;
 }
-
-  

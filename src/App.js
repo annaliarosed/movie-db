@@ -46,6 +46,7 @@ const App = () => {
         </Route>
         <Route exact path="/Components/:movieId">
           <MovieDetails movies={movies} APIKEY={APIKEY} />
+          <TrendList api={APIKEY}/>
         </Route>
       </Switch>
     </>

@@ -11,7 +11,6 @@
     margin: 0 auto;
     max-width: 1500px;
     width: 100%;
-    padding: 50px;
   }
   
   .banner-text {
@@ -30,6 +29,7 @@
   }
   
   #movie-details-poster {
+    padding: 15px;
   }
   
   .under-title-data {

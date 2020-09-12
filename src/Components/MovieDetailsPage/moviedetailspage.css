@@ -1,0 +1,46 @@
+.banner-container {
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+    background-image: url(https://image.tmdb.org/t/p/w780/Ae6beVfGHtPY2L4ZVFni10YIBZI.jpg);
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .banner {
+    display: flex;
+    margin: 0 auto;
+    max-width: 1500px;
+    width: 100%;
+    padding: 50px;
+  }
+  
+  .banner-text {
+    padding-right: 400px;
+    padding-left: 70px;
+    color: white;
+    font-family: sans-serif;
+  }
+  
+  #title {
+    font-weight: bold;
+  }
+  
+  #title span {
+    font-weight: normal;
+  }
+  
+  #movie-details-poster {
+  }
+  
+  .under-title-data {
+    display: flex;
+  }
+  
+  #rating {
+    margin-right: 10px;
+  }
+  
+  li span {
+    position: relative;
+    left: -10px;
+  }

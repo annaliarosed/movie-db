@@ -1,25 +1,25 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import TrendingMovie from "./TrendingMovie";
+import { useState, useEffect } from "react";
 
-const TrendList = ({api}) => {
+const TrendList = ({ api }) => {
   const [trendingMovies, setTrendingMovies] = useState([]);
   const [isDay, setIsDay] = useState(true);
 
   useEffect(() => {
     const getTrending = () => {
-        fetch(
-          `https://api.themoviedb.org/3/trending/movie/${
-            isDay ? "day" : "week"
-          }?api_key=${api}`
-        )
-          .then((response) => response.json())
-          .then((data) => {
-            console.log(data);
-            setTrendingMovies(data.results);
-          });
-      };
-      getTrending()
-  }, [isDay, api])
+      fetch(
+        `https://api.themoviedb.org/3/trending/movie/${
+          isDay ? "day" : "week"
+        }?api_key=${api}`
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          setTrendingMovies(data.results);
+        });
+    };
+    getTrending();
+  }, [api, isDay]);
 
   return (
     <>
@@ -36,6 +36,7 @@ const TrendList = ({api}) => {
               image={movie.poster_path}
               originalTitle={movie.original_title}
               releaseDate={movie.release_date}
+              id={movie.id}
             />
           );
         })}

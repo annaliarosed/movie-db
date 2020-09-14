@@ -12,22 +12,17 @@ const App = () => {
   const [movies, setMovies] = useState([]);
   const [searchValue, setSearchValue] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     if (!searchValue) {
       return;
     }
 
     e.preventDefault();
-    fetch(
+    const data = await fetch(
       `https://api.themoviedb.org/3/search/movie?api_key=${APIKEY}&query=${searchValue}`
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        setMovies(data.results);
-      })
-      .catch(() => {
-        console.log("error");
-      });
+    );
+    const indMovies = await data.json();
+    setMovies(indMovies.results);
   };
 
   return (

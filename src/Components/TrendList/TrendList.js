@@ -7,16 +7,14 @@ const TrendList = ({ api }) => {
   const [isDay, setIsDay] = useState(true);
 
   useEffect(() => {
-    const getTrending = () => {
-      fetch(
+    const getTrending = async () => {
+      const data = await fetch(
         `https://api.themoviedb.org/3/trending/movie/${
           isDay ? "day" : "week"
         }?api_key=${api}`
-      )
-        .then((response) => response.json())
-        .then((data) => {
-          setTrendingMovies(data.results);
-        });
+      );
+      const jsonData = await data.json();
+      setTrendingMovies(jsonData.results);
     };
     getTrending();
   }, [api, isDay]);

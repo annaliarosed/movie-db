@@ -1,13 +1,12 @@
 import React from "react";
 import moment from "moment";
-import { Link } from "react-router-dom";
 
 const Movie = ({ releaseDate, image, originalTitle, id }) => {
   const formattedReleaseDate = moment(releaseDate).format(`MMM D, YYYY`);
 
   return (
     <div className="movie">
-      <Link to={`/Components/${id}`}>
+
         {image == null ? (
           <img
             id="no-photo"
@@ -20,10 +19,7 @@ const Movie = ({ releaseDate, image, originalTitle, id }) => {
             alt="movie poster"
           />
         )}
-      </Link>
-      <Link to={`/Components/${id}`}>
         <p className="movie-title">{originalTitle}</p>
-      </Link>
       <p className="movie-release-date">{formattedReleaseDate}</p>
     </div>
   );

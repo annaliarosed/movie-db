@@ -6,16 +6,19 @@ import MovieDetailsBanner from "./MovieDetailsBanner";
 
 const MovieDetails = ({ movies, APIKEY }) => {
   const { movieId } = useParams();
-  const [currentMovie, setCurrentMovie] = useState("");
+  const [currentMovie, setCurrentMovie] = useState({});
   const num = parseFloat(movieId);
-
+  const currentMovieId = movies.find((movie) => movie.id === num);
+//I think the problem is with this currentMovieId section, component rerenders too many times as well I think
   useEffect(() => {
-    setCurrentMovie(movies.find((movie) => movie.id === num));
-  }, [num, movies]);
+    setCurrentMovie(currentMovieId);
+  }, []);
 
   return (
     <>
       <MovieDetailsBanner
+        id={currentMovie.id}
+        APIKEY={APIKEY}
         backgroundImg={currentMovie.backdrop_path}
         poster={currentMovie.poster_path}
         title={currentMovie.original_title}

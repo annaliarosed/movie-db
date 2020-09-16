@@ -2,22 +2,14 @@ import React from "react";
 import moment from "moment";
 import { useState, useEffect } from "react";
 
-const MovieDetailsBanner = ({
-  id,
-  APIKEY,
-  backgroundImg,
-  poster,
-  title,
-  releaseDate,
-  overview
-}) => {
-  const [movieDetails, setMovieDetails] = useState({
-    genres: {}
-  });
-  const yearReleaseDate = moment(releaseDate).format(`YYYY`);
-  const formattedReleaseDate = moment(releaseDate).format(`MM/DD/YYYY`);
+const MovieDetailsBanner = ({ id, APIKEY }) => {
+  const [movieDetails, setMovieDetails] = useState({});
+  const yearReleaseDate = moment(movieDetails.release_date).format(`YYYY`);
+  const formattedReleaseDate = moment(movieDetails.release_date).format(
+    `MM/DD/YYYY`
+  );
   const styles = {
-    backgroundImage: `url(https://image.tmdb.org/t/p/w780${backgroundImg})`
+    backgroundImage: `url(https://image.tmdb.org/t/p/w780${movieDetails.backdrop_path})`
   };
 
   useEffect(() => {
@@ -30,8 +22,10 @@ const MovieDetailsBanner = ({
     };
     fetchMovieDetails();
   }, [id]);
-  //This api only seems to fetch data after reloading the page or making a change to the code 
-
+  //This api only seems to fetch data after reloading the page or making a change to the code
+  console.log(movieDetails.id);
+  //for example, this returns undefined first then shows the ID
+  
   //dont know how to access genres array, returning undefined
 
   return (
@@ -39,12 +33,12 @@ const MovieDetailsBanner = ({
       <div className="banner">
         <img
           id="movie-details-poster"
-          src={`https://image.tmdb.org/t/p/w342${poster}`}
+          src={`https://image.tmdb.org/t/p/w342${movieDetails.poster_path}`}
           alt="movie poster"
         />
         <div className="banner-text">
           <h1 id="title">
-            {title} <span>({yearReleaseDate})</span>
+            {movieDetails.original_title} <span>({yearReleaseDate})</span>
           </h1>
           <div className="under-title-data">
             <span id="rating">R</span>
@@ -59,7 +53,7 @@ const MovieDetailsBanner = ({
             </li>
           </div>
           <h1>Overview</h1>
-          <p>genres</p>
+          <p>{movieDetails.overview}</p>
         </div>
       </div>
     </div>

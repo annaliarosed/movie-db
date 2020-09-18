@@ -1,6 +1,7 @@
 import React from "react";
 import TrendingMovie from "./TrendingMovie";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const TrendList = ({ api }) => {
   const [trendingMovies, setTrendingMovies] = useState([]);
@@ -29,13 +30,14 @@ const TrendList = ({ api }) => {
       <div className="movie-container">
         {trendingMovies.map((movie, index) => {
           return (
-            <TrendingMovie
-              key={index}
-              image={movie.poster_path}
-              originalTitle={movie.original_title}
-              releaseDate={movie.release_date}
-              id={movie.id}
-            />
+            <Link to={`/movie/${movie.id}`}>
+              <TrendingMovie
+                key={index}
+                image={movie.poster_path}
+                originalTitle={movie.original_title}
+                releaseDate={movie.release_date}
+              />
+            </Link>
           );
         })}
       </div>

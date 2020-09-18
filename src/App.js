@@ -22,6 +22,7 @@ const App = () => {
       `https://api.themoviedb.org/3/search/movie?api_key=${APIKEY}&query=${searchValue}`
     );
     const indMovies = await data.json();
+    console.log(indMovies.results);
     setMovies(indMovies.results);
   };
 
@@ -39,7 +40,7 @@ const App = () => {
           <MovieList movies={movies} />
           <TrendList api={APIKEY} />
         </Route>
-        <Route exact path="/Components/:movieId">
+        <Route path="/movie/:movieId">
           <MovieDetails movies={movies} APIKEY={APIKEY} />
         </Route>
       </Switch>

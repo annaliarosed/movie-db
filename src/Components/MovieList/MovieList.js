@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import Movie from "./Movie";
-import { Link } from "react-router-dom"
 import "./movielist.css";
+import { Link } from "react-router-dom";
 
 const MovieList = (props) => {
   const refField = useRef(null);
@@ -24,14 +24,13 @@ const MovieList = (props) => {
       <div className="movie-container">
         {props.movies.map((movie, index) => {
           return (
-            <Link to={`/Components/${movie.id}`}>
-            <Movie
-              key={index}
-              image={movie.poster_path}
-              originalTitle={movie.original_title}
-              releaseDate={movie.release_date}
-              id={movie.id}
-            />
+            <Link to={`/movie/${movie.id}`} key={index}>
+              <Movie
+                image={movie.poster_path}
+                originalTitle={movie.original_title}
+                releaseDate={movie.release_date}
+                id={movie.id}
+              />
             </Link>
           );
         })}

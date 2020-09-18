@@ -1,12 +1,15 @@
 import React from "react";
-import "./header.css"
+import "./header.css";
+import { Link } from "react-router-dom";
 
 const Header = (props) => {
   return (
     <header className="header-container">
-      <h1>{props.title}</h1>
+      <Link to="/">
+        <h1>{props.title}</h1>
+      </Link>
     </header>
-  )
+  );
 };
 
 export default Header;

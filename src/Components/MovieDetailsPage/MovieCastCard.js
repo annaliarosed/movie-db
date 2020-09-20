@@ -5,7 +5,7 @@ const MovieCastCard = ({ image, Actorname, Charactername }) => {
     <div className="cast-card">
       {image == null ? (
         <img
-          id="no-photo"
+          id="no-photo-cast"
           src={`https://s3-ap-southeast-1.amazonaws.com/upcode/static/default-image.jpg`}
           alt="poster not available"
         />

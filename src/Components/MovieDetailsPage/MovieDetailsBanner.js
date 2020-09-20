@@ -7,6 +7,7 @@ const MovieDetailsBanner = ({ id, APIKEY }) => {
   const [movieDetails, setMovieDetails] = useState({});
   const [genres, setGenres] = useState([]);
   const [trailer, setTrailer] = useState({});
+  const [trailerUrl, setTrailerUrl] = useState("");
   const [rating, setRating] = useState([]);
   const yearReleaseDate = moment(movieDetails.release_date).format(`YYYY`);
   const formattedReleaseDate = moment(movieDetails.release_date).format(
@@ -69,22 +70,21 @@ const MovieDetailsBanner = ({ id, APIKEY }) => {
           <h1>Overview</h1>
           <p className="overview">{movieDetails.overview}</p>
           <div className="buttons-wrapper">
-            {trailer.site === "YouTube" ? (
+            {trailer ? (
               <a
                 className="trailer"
                 target="_blank"
-                href={`https://www.youtube.com/watch?v=${trailer.key}`}
+                onClick={() => {
+                  trailer.site === "YouTube"
+                    ? setTrailerUrl("https://www.youtube.com/watch?v=")
+                    : setTrailerUrl("https://vimeo.com/");
+                }}
+                href={`${trailerUrl}${trailer.key}`}
               >
-                Play trailer
+                trailer
               </a>
             ) : (
-              <a
-                className="trailer"
-                target="_blank"
-                href={`https://vimeo.com/${trailer.key}`}
-              >
-                Play trailer
-              </a>
+              <span className="trailer">No trailer available</span>
             )}
             <a
               className="play-movie"

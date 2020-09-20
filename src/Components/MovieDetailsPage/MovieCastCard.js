@@ -7,7 +7,7 @@ const MovieCastCard = ({ image, Actorname, Charactername }) => {
         <img
           id="no-photo"
           src={`https://s3-ap-southeast-1.amazonaws.com/upcode/static/default-image.jpg`}
-          alt="not available"
+          alt="poster not available"
         />
       ) : (
         <img

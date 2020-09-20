@@ -58,7 +58,9 @@ const MovieDetailsBanner = ({ id, APIKEY }) => {
               <span>{formattedReleaseDate}</span>
             </li>
             <li>
-              <p>{genres.map((item) => item.name)}</p>
+              {genres.map((item) => (
+                <span>{item.name}</span>
+              ))}
             </li>
             <li>
               <span>{movieDetails.runtime} minutes</span>
@@ -66,23 +68,31 @@ const MovieDetailsBanner = ({ id, APIKEY }) => {
           </div>
           <h1>Overview</h1>
           <p className="overview">{movieDetails.overview}</p>
-          {trailer.site === "YouTube" ? (
+          <div className="buttons-wrapper">
+            {trailer.site === "YouTube" ? (
+              <a
+                className="trailer"
+                target="_blank"
+                href={`https://www.youtube.com/watch?v=${trailer.key}`}
+              >
+                Play trailer
+              </a>
+            ) : (
+              <a
+                className="trailer"
+                target="_blank"
+                href={`https://vimeo.com/${trailer.key}`}
+              >
+                Play trailer
+              </a>
+            )}
             <a
-              className="trailer"
-              target="_blank"
-              href={`https://www.youtube.com/watch?v=${trailer.key}`}
+              className="play-movie"
+              href={`https://www.themoviedb.org/movie/${id}/watch?language=en-US`}
             >
-              trailer
+              Play movie
             </a>
-          ) : (
-            <a
-              className="trailer"
-              target="_blank"
-              href={`https://vimeo.com/${trailer.key}`}
-            >
-              trailer
-            </a>
-          )}
+          </div>
         </div>
       </div>
     </div>

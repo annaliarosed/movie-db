@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 
 const MovieDetailsBanner = ({ id, APIKEY }) => {
   const [movieDetails, setMovieDetails] = useState({});
+  const [genres, setGenres] = useState([])
   const yearReleaseDate = moment(movieDetails.release_date).format(`YYYY`);
   const formattedReleaseDate = moment(movieDetails.release_date).format(
     `MM/DD/YYYY`
@@ -21,12 +22,15 @@ const MovieDetailsBanner = ({ id, APIKEY }) => {
       setMovieDetails(jsonData);
     };
     fetchMovieDetails();
+    setGenres(movieDetails['genres'])
   }, [id]);
   //This api only seems to fetch data after reloading the page or making a change to the code
   console.log(movieDetails.id);
   //for example, this returns undefined first then shows the ID
   
   //dont know how to access genres array, returning undefined
+console.log(genres)
+
 
   return (
     <div className="banner-container" style={styles}>

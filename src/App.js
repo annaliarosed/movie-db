@@ -8,6 +8,7 @@ import { Switch, Route } from "react-router-dom";
 import MovieDetails from "./Components/MovieDetailsPage/MovieDetails";
 
 const App = () => {
+  const myAbortController = new AbortController();
   const APIKEY = "3aece1730ec57334758cdeb57c0d6adb";
   const [movies, setMovies] = useState([]);
   const [searchValue, setSearchValue] = useState("");
@@ -19,11 +20,17 @@ const App = () => {
 
     e.preventDefault();
     const data = await fetch(
-      `https://api.themoviedb.org/3/search/movie?api_key=${APIKEY}&query=${searchValue}`
+      `https://api.themoviedb.org/3/search/movie?api_key=${APIKEY}&query=${searchValue}`,
+      { signal: myAbortController.signal }
     );
     const indMovies = await data.json();
     console.log(indMovies.results);
     setMovies(indMovies.results);
+    setSearchValue("");
+    return () => {
+      console.log("Component unmounted");
+      myAbortController.abort();
+    };
   };
 
   return (

@@ -1,46 +1,95 @@
 .banner-container {
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-blend-mode: overlay;
-    background-image: url(https://image.tmdb.org/t/p/w780/Ae6beVfGHtPY2L4ZVFni10YIBZI.jpg);
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-  
-  .banner {
-    display: flex;
-    margin: 0 auto;
-    max-width: 1500px;
-    width: 100%;
-  }
-  
-  .banner-text {
-    padding-right: 400px;
-    padding-left: 70px;
-    color: white;
-    font-family: sans-serif;
-  }
-  
-  #title {
-    font-weight: bold;
-  }
-  
-  #title span {
-    font-weight: normal;
-  }
-  
-  #movie-details-poster {
-    padding: 15px;
-  }
-  
-  .under-title-data {
-    display: flex;
-  }
-  
-  #rating {
-    margin-right: 10px;
-  }
-  
-  li span {
-    position: relative;
-    left: -10px;
-  }
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: overlay;
+  background-image: url(https://image.tmdb.org/t/p/w780/Ae6beVfGHtPY2L4ZVFni10YIBZI.jpg);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.banner {
+  display: flex;
+  margin: 0 auto;
+  max-width: 1500px;
+  width: 100%;
+  padding: 50px;
+}
+
+.banner-text {
+  padding-right: 400px;
+  padding-left: 70px;
+  color: white;
+  font-family: sans-serif;
+}
+
+#title {
+  font-weight: bold;
+}
+
+#title span {
+  font-weight: normal;
+}
+
+.under-title-data {
+  display: flex;
+}
+
+#rating {
+  margin-right: 10px;
+}
+
+li span {
+  position: relative;
+  left: -10px;
+}
+
+.overview {
+  padding-bottom: 20px;
+}
+
+.trailer {
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+  background-color: pink;
+  padding: 10px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+/*Movie cast css*/
+
+#no-photo {
+  width: 100%;
+  height: 285.5px;
+}
+
+.movie-cast-card-container {
+  display: flex;
+  flex-wrap: no-wrap;
+  overflow: auto;
+}
+
+.cast-card {
+  margin: 10px;
+  max-width: 190px;
+  width: 100%;
+  flex: 0 0 auto;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.cast-card img {
+  width: 100%;
+}
+
+.name-container {
+  background-color: #edf3f1;
+  margin-top: -3px;
+  flex: 1;
+}
+
+.actor {
+  padding-top: 10px;
+  margin: 0;
+}

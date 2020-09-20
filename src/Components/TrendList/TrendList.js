@@ -30,7 +30,7 @@ const TrendList = ({ api }) => {
       <div className="movie-container">
         {trendingMovies.map((movie, index) => {
           return (
-            <Link to={`/movie/${movie.id}`}  key={index}>
+            <Link to={`/movie/${movie.id}`}  key={index} className="link">
               <TrendingMovie
                 image={movie.poster_path}
                 originalTitle={movie.original_title}

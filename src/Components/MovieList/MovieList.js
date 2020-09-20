@@ -24,7 +24,7 @@ const MovieList = (props) => {
       <div className="movie-container">
         {props.movies.map((movie, index) => {
           return (
-            <Link to={`/movie/${movie.id}`} key={index}>
+            <Link to={`/movie/${movie.id}`} key={index} className="link">
               <Movie
                 image={movie.poster_path}
                 originalTitle={movie.original_title}

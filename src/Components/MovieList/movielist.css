@@ -8,7 +8,6 @@
 }
 
 .movie-container {
-  margin-top: 20px;
   display: flex;
   flex-wrap: no-wrap;
   overflow: auto;
@@ -37,4 +36,9 @@
 .movie-release-date {
   font-family: sans-serif;
   margin-bottom: 0;
+}
+
+.link {
+  text-decoration: none;
+  color: #0f1843;
 }

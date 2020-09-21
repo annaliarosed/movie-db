@@ -3,6 +3,12 @@
   height: 275px;
 }
 
+.search-results-wrapper {
+  max-width: 1250px;
+  width: 100%;
+  margin: 0 auto;
+}
+
 .search-results {
   padding-top: 50px;
 }
@@ -11,6 +17,38 @@
   display: flex;
   flex-wrap: no-wrap;
   overflow: auto;
+  margin-bottom: 75px;
+}
+
+.movie-container::-webkit-scrollbar {
+  height: 15px;
+}
+
+.movie-container::-webkit-scrollbar-thumb {
+  background-color: #4b8978;
+  border-radius: 9px;
+  background-clip: content-box;
+  border: 3px solid transparent;
+  width: 5px;
+}
+
+.movie-container::-webkit-scrollbar-track {
+  background-color: white;
+  border: 1px solid transparent;
+}
+
+.movie-container-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.arrow {
+  background-color: #4b8978;
+  color: white;
+  border: 1px solid black;
+  width: 20px;
+  height: 20px;
+  margin-left: 20px;
 }
 
 .movie {

@@ -2,8 +2,10 @@ import React from "react";
 import TrendingMovie from "./TrendingMovie";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import "./trendlist.css";
 
 const TrendList = ({ api }) => {
+  const myAbortController = new AbortController();
   const [trendingMovies, setTrendingMovies] = useState([]);
   const [isDay, setIsDay] = useState(true);
 
@@ -12,25 +14,35 @@ const TrendList = ({ api }) => {
       const data = await fetch(
         `https://api.themoviedb.org/3/trending/movie/${
           isDay ? "day" : "week"
-        }?api_key=${api}`
+        }?api_key=${api}`,
+        { signal: myAbortController.signal }
       );
       const jsonData = await data.json();
       setTrendingMovies(jsonData.results);
+
+      return () => {
+        console.log("Component unmounted");
+        myAbortController.abort();
+      };
     };
     getTrending();
   }, [api, isDay]);
 
   return (
-    <>
+    <div className="trending-container">
       <div className="trending-wrapper">
         <h1>Trending</h1>
-        <button onClick={() => setIsDay(true)}>day</button>
-        <button onClick={() => setIsDay(false)}>week</button>
+        <button onClick={() => setIsDay(true)} className="day-button">
+          DAY
+        </button>
+        <button onClick={() => setIsDay(false)} className="week-button">
+          WEEK
+        </button>
       </div>
-      <div className="movie-container">
+      <div className="trending-movie-container">
         {trendingMovies.map((movie, index) => {
           return (
-            <Link to={`/movie/${movie.id}`}  key={index} className="link">
+            <Link to={`/movie/${movie.id}`} key={index} className="link">
               <TrendingMovie
                 image={movie.poster_path}
                 originalTitle={movie.original_title}
@@ -40,7 +52,7 @@ const TrendList = ({ api }) => {
           );
         })}
       </div>
-    </>
+    </div>
   );
 };
 

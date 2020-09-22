@@ -3,19 +3,19 @@
   background-repeat: no-repeat;
   background-blend-mode: overlay;
   background-image: url(https://image.tmdb.org/t/p/w780/Ae6beVfGHtPY2L4ZVFni10YIBZI.jpg);
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
 }
 
 .banner {
   display: flex;
   margin: 0 auto;
-  max-width: 1500px;
-  width: 100%;
+  max-width: 1250px;
   padding: 50px;
 }
 
 .banner-text {
-  padding-right: 400px;
+  padding-right: 150px;
   padding-left: 70px;
   color: white;
   font-family: sans-serif;
@@ -31,10 +31,17 @@
 
 .under-title-data {
   display: flex;
+  align-items: center;
 }
 
 #rating {
   margin-right: 10px;
+  padding: 2px;
+  border: 1px solid white;
+}
+
+.genre {
+  margin-right: 5px;
 }
 
 li span {
@@ -77,10 +84,33 @@ li span {
   height: 285.5px;
 }
 
-.movie-cast-card-container {
+.movie-cast-container {
+  max-width: 1250px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.movie-cast-cards {
   display: flex;
   flex-wrap: no-wrap;
   overflow: auto;
+}
+
+.movie-cast-cards::-webkit-scrollbar {
+  height: 15px;
+}
+
+.movie-cast-cards::-webkit-scrollbar-thumb {
+  background-color: #4b8978;
+  border-radius: 9px;
+  background-clip: content-box;
+  border: 3px solid transparent;
+  width: 5px;
+}
+
+.movie-cast-cards::-webkit-scrollbar-track {
+  background-color: white;
+  border: 1px solid transparent;
 }
 
 .cast-card {

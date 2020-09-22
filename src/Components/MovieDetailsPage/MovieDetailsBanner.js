@@ -39,6 +39,8 @@ const MovieDetailsBanner = ({ id, APIKEY }) => {
     };
   }, []);
 
+  console.log(rating);
+
   return (
     <div className="banner-container" style={styles}>
       <div className="banner">
@@ -59,8 +61,12 @@ const MovieDetailsBanner = ({ id, APIKEY }) => {
               <span>{formattedReleaseDate}</span>
             </li>
             <li>
-              {genres.map((item) => (
-                <span>{item.name}</span>
+              {genres.map((item, index) => (
+                <span key={index} className="genre">
+                  {index === genres.length - 1
+                    ? `${item.name}`
+                    : `${item.name},`}
+                </span>
               ))}
             </li>
             <li>
@@ -74,6 +80,7 @@ const MovieDetailsBanner = ({ id, APIKEY }) => {
               <a
                 className="trailer"
                 target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => {
                   trailer.site === "YouTube"
                     ? setTrailerUrl("https://www.youtube.com/watch?v=")
@@ -81,7 +88,7 @@ const MovieDetailsBanner = ({ id, APIKEY }) => {
                 }}
                 href={`${trailerUrl}${trailer.key}`}
               >
-                trailer
+                Play trailer
               </a>
             ) : (
               <span className="trailer">No trailer available</span>

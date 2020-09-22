@@ -1,74 +1,66 @@
 #no-photo {
-    width: 180px;
-    height: 275px;
-  }
-  
-  .trending-container {
-    max-width: 1250px;
-    width: 100%;
-    margin: 0 auto;
-  }
-  
-  .trending-wrapper {
-    margin-top: 30px;
-    padding-bottom: 15px;
-  }
-  
-  .day-button {
-    background-color: #4b8978;
-    color: white;
-    padding: 10px;
-    letter-spacing: 5px;
-    border-radius: 10px;
-    border: 1px solid #4b8978;
-    margin-right: 10px;
-    margin-left: 10px;
-    outline: 0;
-  }
-  
-  .day-button:focus {
-    border: 2px solid #2d5248;
-    color: #2d5248;
-    font-weight: bold;
-  }
-  
-  .week-button {
-    background-color: #4b8978;
-    color: white;
-    padding: 10px;
-    letter-spacing: 5px;
-    border-radius: 10px;
-    border: 1px solid #4b8978;
-    outline: 0;
-  }
-  
-  .week-button:focus {
-    border: 2px solid #2d5248;
-    color: #2d5248;
-    font-weight: bold;
-  }
-  
-  .trending-movie-container {
-    display: flex;
-    flex-wrap: no-wrap;
-    overflow: auto;
-    margin-bottom: 75px;
-  }
-  
-  .trending-movie-container::-webkit-scrollbar {
-    height: 15px;
-  }
-  
-  .trending-movie-container::-webkit-scrollbar-thumb {
-    background-color: #4b8978;
-    border-radius: 9px;
-    background-clip: content-box;
-    border: 3px solid transparent;
-    width: 5px;
-  }
-  
-  .trending-movie-container::-webkit-scrollbar-track {
-    background-color: white;
-    border: 1px solid transparent;
-  }
+  width: 180px;
+  height: 275px;
+}
+
+.trending-container {
+  max-width: 1250px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.trending-wrapper {
+  margin-top: 30px;
+  padding-bottom: 15px;
+}
+
+.day-button {
+  background-color: #4b8978;
+  color: white;
+  border: 3px solid transparent;
+  padding: 10px;
+  letter-spacing: 5px;
+  border-radius: 10px;
+  outline: 0;
+  cursor: pointer;
+  font-weight: bold;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.week-button {
+  background-color: #4b8978;
+  color: white;
+  border: 3px solid transparent;
+  padding: 10px;
+  letter-spacing: 5px;
+  border-radius: 10px;
+  outline: 0;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.trending-movie-container {
+  display: flex;
+  flex-wrap: no-wrap;
+  overflow: auto;
+  margin-bottom: 75px;
+}
+
+.trending-movie-container::-webkit-scrollbar {
+  height: 15px;
+}
+
+.trending-movie-container::-webkit-scrollbar-thumb {
+  background-color: #4b8978;
+  border-radius: 9px;
+  background-clip: content-box;
+  border: 3px solid transparent;
+  width: 5px;
+}
+
+.trending-movie-container::-webkit-scrollbar-track {
+  background-color: white;
+  border: 1px solid transparent;
+}
   

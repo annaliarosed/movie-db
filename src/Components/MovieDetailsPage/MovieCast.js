@@ -25,21 +25,21 @@ const MovieCast = ({ id, APIKEY }) => {
   }, []);
 
   return (
-    <>
+    <div className="movie-cast-container">
       <h1>Movie Cast</h1>
-      <div className="movie-cast-card-container">
+      <div className="movie-cast-cards">
         {cast.map((item, index) => {
           return (
             <MovieCastCard
               key={index}
               image={item.profile_path}
-              Actorname={item.name}
-              Charactername={item.character}
+              actorName={item.name}
+              characterName={item.character}
             />
           );
         })}
       </div>
-    </>
+    </div>
   );
 };
 

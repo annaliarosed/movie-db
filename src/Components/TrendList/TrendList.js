@@ -9,6 +9,12 @@ const TrendList = ({ api }) => {
   const [trendingMovies, setTrendingMovies] = useState([]);
   const [isDay, setIsDay] = useState(true);
 
+  const styles = {
+    color: "#4b8978",
+    backgroundColor: "transparent",
+    border: "3px solid #4b8978"
+  };
+
   useEffect(() => {
     const getTrending = async () => {
       const data = await fetch(
@@ -32,10 +38,18 @@ const TrendList = ({ api }) => {
     <div className="trending-container">
       <div className="trending-wrapper">
         <h1>Trending</h1>
-        <button onClick={() => setIsDay(true)} className="day-button">
+        <button
+          onClick={() => setIsDay(true)}
+          className="day-button"
+          style={isDay ? styles : null}
+        >
           DAY
         </button>
-        <button onClick={() => setIsDay(false)} className="week-button">
+        <button
+          onClick={() => setIsDay(false)}
+          className="week-button"
+          style={!isDay ? styles : null}
+        >
           WEEK
         </button>
       </div>

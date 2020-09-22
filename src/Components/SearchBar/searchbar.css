@@ -1,3 +1,8 @@
+.input-container-wrapper {
+  width: 100%;
+  background-color: #4b8978;
+}
+
 .input-container {
   background-color: #4b8978;
   align-items: center;
@@ -6,6 +11,8 @@
   flex-direction: column;
   padding: 100px;
   color: white;
+  max-width: 1250px;
+  width: 100%;
 }
 
 .input-container h1 {

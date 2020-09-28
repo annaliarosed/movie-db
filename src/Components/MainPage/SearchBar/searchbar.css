@@ -1,5 +1,4 @@
 .input-container-wrapper {
-  width: 100%;
   background-color: #4b8978;
 }
 
@@ -11,7 +10,7 @@
   flex-direction: column;
   padding: 100px;
   color: white;
-  max-width: 1250px;
+  max-width: 999px;
   width: 100%;
 }
 

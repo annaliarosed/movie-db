@@ -14,10 +14,10 @@
   padding-bottom: 15px;
 }
 
-.day-button {
-  background-color: #4b8978;
-  color: white;
-  border: 3px solid transparent;
+.btn {
+  background-color: transparent;
+  color: #4b8978;
+  border: 3px solid #4b8978;
   padding: 10px;
   letter-spacing: 5px;
   border-radius: 10px;
@@ -26,18 +26,13 @@
   font-weight: bold;
   margin-right: 10px;
   margin-left: 10px;
+  transition: 0.5s;
 }
 
-.week-button {
+.active {
   background-color: #4b8978;
-  color: white;
-  border: 3px solid transparent;
-  padding: 10px;
-  letter-spacing: 5px;
-  border-radius: 10px;
-  outline: 0;
-  cursor: pointer;
-  font-weight: bold;
+  color: #fff;
+  border: 3px solid #4b8978;
 }
 
 .trending-movie-container {
@@ -63,4 +58,3 @@
   background-color: white;
   border: 1px solid transparent;
 }
-  

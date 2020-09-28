@@ -9,8 +9,7 @@ const MovieDetails = ({ APIKEY }) => {
   const { movieId } = useParams();
 
   return (
-    <>
-      
+    <> 
       <MovieDetailsBanner id={movieId} APIKEY={APIKEY} />
       <MovieCast id={movieId} APIKEY={APIKEY} />
     </>

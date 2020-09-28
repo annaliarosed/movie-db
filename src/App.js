@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import "./App.css";
-import SearchBar from "./Components/SearchBar/SearchBar.js";
-import MovieList from "./Components/MovieList/MovieList.js";
-import Header from "./Components/Header/Header.js";
-import TrendList from "./Components/TrendList/TrendList";
 import { Switch, Route } from "react-router-dom";
 import MovieDetails from "./Components/MovieDetailsPage/MovieDetails";
+import MainPage from "./Components/MainPage/MainPage.js";
+import Header from "./Components/MainPage/Header/Header"
 
 const App = () => {
   const myAbortController = new AbortController();
@@ -38,14 +36,13 @@ const App = () => {
       <Header title="MOVIE DATABASE" />
       <Switch>
         <Route exact path="/">
-          <SearchBar
-            caption="Millions of movies, TV shows and people to discover. Explore now."
+          <MainPage
             handleSubmit={handleSubmit}
             searchValue={searchValue}
             setSearchValue={setSearchValue}
+            movies={movies}
+            APIKEY={APIKEY}
           />
-          <MovieList movies={movies} />
-          <TrendList api={APIKEY} />
         </Route>
         <Route path="/movie/:movieId">
           <MovieDetails movies={movies} APIKEY={APIKEY} />

@@ -27,9 +27,8 @@ const MovieDetailsBanner = ({ id, APIKEY }) => {
       setMovieDetails(jsonData);
       setGenres(jsonData.genres);
       setTrailer(jsonData.videos.results[0]);
-      setRating(
-        jsonData.release_dates.results.find((x) => x.iso_3166_1 === "US")
-          .release_dates[0]
+      setRating(jsonData.release_dates.results.length !== 0 ? jsonData.release_dates.results.find((x) => x.iso_3166_1 === "US")
+      .release_dates[0] : ''
       );
     };
     fetchMovieDetails();
@@ -39,7 +38,7 @@ const MovieDetailsBanner = ({ id, APIKEY }) => {
     };
   }, []);
 
-  console.log(rating);
+  console.log(movieDetails);
 
   return (
     <div className="banner-container" style={styles}>

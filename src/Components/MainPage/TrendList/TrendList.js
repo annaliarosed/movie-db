@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./trendlist.css";
 
-const TrendList = ({ api }) => {
+const TrendList = ({ APIKEY }) => {
   const myAbortController = new AbortController();
   const [trendingMovies, setTrendingMovies] = useState([]);
   const [isDay, setIsDay] = useState(true);
@@ -20,7 +20,7 @@ const TrendList = ({ api }) => {
       const data = await fetch(
         `https://api.themoviedb.org/3/trending/movie/${
           isDay ? "day" : "week"
-        }?api_key=${api}`,
+        }?api_key=${APIKEY}`,
         { signal: myAbortController.signal }
       );
       const jsonData = await data.json();
@@ -32,7 +32,7 @@ const TrendList = ({ api }) => {
       };
     };
     getTrending();
-  }, [api, isDay]);
+  }, [APIKEY, isDay]);
 
   return (
     <div className="trending-container">

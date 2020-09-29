@@ -31,6 +31,7 @@ const MovieCast = ({ id, APIKEY }) => {
         {cast.map((item, index) => {
           return (
             <MovieCastCard
+              APIKEY={APIKEY}
               key={index}
               image={item.profile_path}
               actorName={item.name}

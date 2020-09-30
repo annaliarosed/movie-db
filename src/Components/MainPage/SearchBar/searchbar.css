@@ -39,23 +39,29 @@
   box-sizing: border-box;
   border: 1px solid transparent;
   border-radius: 2px;
-  padding: 5px;
+  padding: 20px;
   width: 420px;
 }
 
 .search-bar:focus {
   outline: 2px solid #4b8978;
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+  padding: 20px;
 }
 
-.search-bar::placeholder{
+.search-bar::placeholder {
   font-family: "Oswald", sans-serif;
+  font-size: 20px;
+  display: flex;
+  align-items: flex-end;
 }
 
 .search-logo {
   position: relative;
-  left: -30px;
+  left: -35px;
   cursor: pointer;
   width: 20px;
   height: 20px;
-  margin-top: 3px;
+  margin-top: 18px;
 }

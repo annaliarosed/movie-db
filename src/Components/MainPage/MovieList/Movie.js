@@ -6,7 +6,7 @@ const Movie = ({ releaseDate, image, originalTitle, id, vote }) => {
 
   return (
     <div className="movie">
-      <div>{vote}</div>
+      <p className="avg-movie-vote">{vote}</p>
       {image == null ? (
         <img
           id="no-photo"

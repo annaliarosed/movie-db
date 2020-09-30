@@ -52,10 +52,24 @@
 }
 
 .movie {
+  position: relative;
   margin: 10px;
   max-width: 190px;
   width: 100%;
   flex: 0 0 auto;
+}
+
+.avg-movie-vote {
+  position: absolute;
+  margin-left: 160px;
+  margin-top: -10px;
+  background-color: #4b8978;
+  color: black;
+  padding: 5px;
+  border-radius: 8px;
+  font-size: 12px;
+  width: 17px;
+  text-align: center;
 }
 
 .movie img {

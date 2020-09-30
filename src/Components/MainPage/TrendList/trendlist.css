@@ -14,6 +14,21 @@
   padding-bottom: 15px;
 }
 
+.trending-movie {
+  position: relative;
+  margin: 10px;
+  max-width: 190px;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.trending-movie img {
+  height: 100%;
+  max-height: 264px;
+  border-radius: 5px;
+  border: 2px solid #4b8978;
+}
+
 .btn {
   background-color: transparent;
   color: #4b8978;
@@ -57,4 +72,17 @@
 .trending-movie-container::-webkit-scrollbar-track {
   background-color: white;
   border: 1px solid transparent;
+}
+
+.avg-vote {
+  position: absolute;
+  margin-left: 160px;
+  margin-top: -10px;
+  background-color: #4b8978;
+  color: black;
+  padding: 5px;
+  border-radius: 8px;
+  font-size: 12px;
+  width: 17px;
+  text-align: center;
 }

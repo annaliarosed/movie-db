@@ -9,7 +9,7 @@ const MovieList = (props) => {
   useEffect(() => {
     if (props.movies.length > 0 && refField.current) {
       refField.current.scrollIntoView({
-        behavior: "smooth"
+        behavior: "smooth",
       });
     }
   }, [props.movies]);
@@ -25,6 +25,7 @@ const MovieList = (props) => {
             return (
               <Link to={`/movie/${movie.id}`} key={index} className="link">
                 <Movie
+                  vote={movie.vote_average}
                   image={movie.poster_path}
                   originalTitle={movie.original_title}
                   releaseDate={movie.release_date}

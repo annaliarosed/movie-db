@@ -45,19 +45,20 @@ const TrendList = ({ APIKEY }) => {
           WEEK
         </button>
 
-      <div className="trending-movie-container">
-        {trendingMovies.map((movie, index) => {
-          return (
-            <Link to={`/movie/${movie.id}`} key={index} className="link">
-              <TrendingMovie
-                image={movie.poster_path}
-                originalTitle={movie.original_title}
-                releaseDate={movie.release_date}
-              />
-            </Link>
-          );
-        })}
-      </div>
+        <div className="trending-movie-container">
+          {trendingMovies.map((movie, index) => {
+            return (
+              <Link to={`/movie/${movie.id}`} key={index} className="link">
+                <TrendingMovie
+                  vote={movie.vote_average}
+                  image={movie.poster_path}
+                  originalTitle={movie.original_title}
+                  releaseDate={movie.release_date}
+                />
+              </Link>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

@@ -1,11 +1,12 @@
 import React from "react";
 import moment from "moment";
 
-const TrendingMovie = ({ releaseDate, image, originalTitle, id }) => {
+const TrendingMovie = ({ releaseDate, image, originalTitle, id, vote }) => {
   const formattedReleaseDate = moment(releaseDate).format(`MMM D, YYYY`);
 
   return (
     <div className="movie">
+      <div>{vote}</div>
       {image == null ? (
         <img
           id="no-photo"

@@ -47,6 +47,10 @@
   outline: 2px solid #4b8978;
 }
 
+.search-bar::placeholder{
+  font-family: "Oswald", sans-serif;
+}
+
 .search-logo {
   position: relative;
   left: -30px;

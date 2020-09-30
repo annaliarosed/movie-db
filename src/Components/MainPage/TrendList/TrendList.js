@@ -44,7 +44,7 @@ const TrendList = ({ APIKEY }) => {
         >
           WEEK
         </button>
-      </div>
+
       <div className="trending-movie-container">
         {trendingMovies.map((movie, index) => {
           return (
@@ -57,6 +57,7 @@ const TrendList = ({ APIKEY }) => {
             </Link>
           );
         })}
+      </div>
       </div>
     </div>
   );

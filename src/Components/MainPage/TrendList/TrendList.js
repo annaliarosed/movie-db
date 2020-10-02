@@ -28,10 +28,12 @@ const TrendList = ({ APIKEY }) => {
     getTrending();
   }, [APIKEY, isDay]);
 
+  console.log(trendingMovies);
+
   return (
     <div className="trending-container">
-      <div className="trending-wrapper">
-        <h1>Trending</h1>
+      <div className="trending-title-wrapper">
+        <h1 className="trending-title">Trending</h1>
         <button
           onClick={() => setIsDay(true)}
           className={`btn ${isDay ? " active" : ""}`}
@@ -44,21 +46,24 @@ const TrendList = ({ APIKEY }) => {
         >
           WEEK
         </button>
-
-        <div className="trending-movie-container">
-          {trendingMovies.map((movie, index) => {
-            return (
-              <Link to={`/movie/${movie.id}`} key={index} className="link">
-                <TrendingMovie
-                  vote={movie.vote_average}
-                  image={movie.poster_path}
-                  originalTitle={movie.original_title}
-                  releaseDate={movie.release_date}
-                />
-              </Link>
-            );
-          })}
-        </div>
+      </div>
+      <div className="trending-movie-container">
+        {trendingMovies.map((movie, index) => {
+          return (
+            <Link
+              to={`/movie/${movie.id}`}
+              key={index}
+              className="trending-link"
+            >
+              <TrendingMovie
+                vote={movie.vote_average}
+                image={movie.poster_path}
+                originalTitle={movie.original_title}
+                releaseDate={movie.release_date}
+              />
+            </Link>
+          );
+        })}
       </div>
     </div>
   );

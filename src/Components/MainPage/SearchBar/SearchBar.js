@@ -9,11 +9,9 @@ const SearchBar = ({ caption, handleSubmit, searchValue, setSearchValue }) => {
   return (
     <div className="input-container-wrapper">
       <div className="input-container">
-        <h1 className="welcome">Welcome</h1>
-        <h6 className="caption">{caption}</h6>
         <form className="form-container" onSubmit={handleSubmit}>
           <input
-            placeholder="Search for movie..."
+            placeholder="Search..."
             className="search-bar"
             type="text"
             value={searchValue}
@@ -27,6 +25,7 @@ const SearchBar = ({ caption, handleSubmit, searchValue, setSearchValue }) => {
             src="https://img.icons8.com/windows/32/000000/search.png"
           />
         </form>
+        <h6 className="caption">{caption}</h6>
       </div>
     </div>
   );

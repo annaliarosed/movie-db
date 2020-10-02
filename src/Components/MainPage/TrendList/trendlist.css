@@ -1,18 +1,74 @@
-#no-photo {
-  width: 180px;
-  height: 275px;
-}
-
 .trending-container {
   max-width: 1250px;
   width: 100%;
   margin: 0 auto;
 }
 
-.trending-wrapper {
-  margin-top: 30px;
-  padding-bottom: 15px;
+.trending-title-wrapper {
+  display: flex;
+  text-transform: uppercase;
+  align-items: center;
 }
+
+.trending-title {
+  margin-right: 30px;
+  color: #493871;
+}
+
+.btn {
+  font-family: "Oswald", sans-serif;
+  background-color: transparent;
+  color: #493871;
+  border: 2px solid #493871;
+  padding: 9px;
+  letter-spacing: 5px;
+  border-radius: 10px;
+  outline: 0;
+  cursor: pointer;
+  font-weight: bold;
+  margin-right: 10px;
+  margin-left: 10px;
+  transition: 0.5s;
+  height: 45px;
+  width: 100px;
+}
+
+.btn:hover {
+  box-shadow: 2px 0px 63px -20px rgba(73, 56, 113, 1);
+}
+
+.active {
+  background-color: #ff7955;
+  border: 1px solid #ff7955;
+  color: #fff;
+}
+
+.trending-movie-container {
+  display: flex;
+  flex-wrap: no-wrap;
+  overflow: auto;
+  margin-bottom: 75px;
+}
+
+.trending-movie-container::-webkit-scrollbar {
+  height: 10px;
+  background-color: rgba(255, 121, 85, 0.1);
+  border-radius: 9px;
+}
+
+.trending-movie-container::-webkit-scrollbar-thumb {
+  background-color: #ff7955;
+  border-radius: 9px;
+  background-clip: content-box;
+  width: 5px;
+}
+
+.trending-link {
+  text-decoration: none;
+  color: #493871;
+}
+
+/*TrendingMovie*/
 
 .trending-movie {
   position: relative;
@@ -22,68 +78,87 @@
   flex: 0 0 auto;
 }
 
-.trending-movie img {
-  height: 100%;
-  max-height: 264px;
-  border-radius: 5px;
-  border: 2px solid #4b8978;
-}
-
-.btn {
-  background-color: transparent;
-  color: #4b8978;
-  border: 3px solid #4b8978;
-  padding: 10px;
-  letter-spacing: 5px;
-  border-radius: 10px;
-  outline: 0;
-  cursor: pointer;
-  font-weight: bold;
-  margin-right: 10px;
-  margin-left: 10px;
-  transition: 0.5s;
-}
-
-.active {
-  background-color: #4b8978;
-  color: #fff;
-  border: 3px solid #4b8978;
-}
-
-.trending-movie-container {
-  display: flex;
-  flex-wrap: no-wrap;
-  overflow: auto;
-  margin-bottom: 75px;
-  margin-top: 20px;
-}
-
-.trending-movie-container::-webkit-scrollbar {
-  height: 15px;
-}
-
-.trending-movie-container::-webkit-scrollbar-thumb {
-  background-color: #4b8978;
-  border-radius: 9px;
-  background-clip: content-box;
-  border: 3px solid transparent;
-  width: 5px;
-}
-
-.trending-movie-container::-webkit-scrollbar-track {
-  background-color: white;
-  border: 1px solid transparent;
-}
-
 .avg-vote {
   position: absolute;
-  margin-left: 160px;
-  margin-top: -10px;
-  background-color: #4b8978;
-  color: black;
-  padding: 5px;
+  margin-left: 155px;
+  margin-top: -5px;
+  background-color: #f4327f;
+  color: white;
+  padding: 9px;
   border-radius: 8px;
   font-size: 12px;
   width: 17px;
   text-align: center;
+  z-index: 1;
+}
+
+.trending-movie-poster-wrapper {
+  border-radius: 5px;
+  height: 268px;
+  width: 184px;
+  display: inline-block;
+  overflow: hidden;
+  border: 2px solid#FF7955;
+}
+
+.trending-movie-poster {
+  transition: 0.4s;
+  height: 100%;
+  width: 100%;
+}
+
+.trending-movie-poster:hover {
+  transform: scale(1.1);
+}
+
+.no-trending-movie {
+  height: 268px;
+  width: 184px;
+  text-transform: uppercase;
+  border-radius: 5px;
+  border: 2px solid#FF7955;
+  background-color: #ff7955;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+}
+
+.no-trending-movie {
+  height: 268px;
+  width: 184px;
+  text-transform: uppercase;
+  border-radius: 5px;
+  border: 2px solid#FF7955;
+  background-color: #ff7955;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+  transition: 0.3s;
+}
+
+.no-trending-movie:hover {
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.trending-movie-title {
+  font-family: sans-serif;
+  margin-bottom: 0;
+  font-weight: bold;
+  margin-left: 7px;
+}
+
+.trending-release-date {
+  font-family: "Oswald", sans-serif;
+  margin-bottom: 0;
+  margin-left: 7px;
+  font-size: 14px;
 }

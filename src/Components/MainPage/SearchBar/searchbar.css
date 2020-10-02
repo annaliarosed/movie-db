@@ -1,10 +1,13 @@
 .input-container-wrapper {
-  background-size: cover;
   width: 100%;
-  background-repeat: no-repeat;
-  background-blend-mode: overlay;
-  background-color: rgba(45, 82, 72, 1);
-  background-image: url(https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1225&q=80);
+  background: linear-gradient(
+      to top right,
+      rgba(244, 50, 127, 0.6),
+      rgba(255, 121, 85, 0.6)
+    ),
+    url("https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1225&q=80")
+      no-repeat center center;
+  background-size: cover;
 }
 
 .input-container {
@@ -15,46 +18,51 @@
   color: white;
   max-width: 999px;
   width: 100%;
-}
-
-.welcome {
-  font-size: 60px;
-  margin-top: 65px;
-  margin-bottom: 0px;
+  padding: 150px;
 }
 
 .caption {
-  font-size: 30px;
+  font-size: 20px;
   word-spacing: 2px;
-  margin-top: 25px;
-  margin-bottom: 40px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-style: italic;
+  font-weight: normal;
 }
 
 .form-container {
-  padding: 75px;
+  padding: 10px;
   display: flex;
 }
 
 .search-bar {
   box-sizing: border-box;
-  border: 1px solid transparent;
-  border-radius: 2px;
-  padding: 20px;
-  width: 420px;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 30px;
+  width: 635px;
+  transition: 0.3s;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  text-indent: 15px;
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+  color: white;
+  text-transform: uppercase;
 }
 
 .search-bar:focus {
-  outline: 2px solid #4b8978;
-  font-family: "Oswald", sans-serif;
-  font-size: 20px;
-  padding: 20px;
+  background-color: rgba(73, 56, 113, 0.3);
+  box-shadow: 0 0 0 3px rgba(73, 56, 113, 0.3);
+  outline: none;
 }
 
-.search-bar::placeholder {
+.search-bar::-webkit-input-placeholder {
   font-family: "Oswald", sans-serif;
   font-size: 20px;
-  display: flex;
-  align-items: flex-end;
+  color: white;
+  text-transform: uppercase;
 }
 
 .search-logo {
@@ -64,4 +72,7 @@
   width: 20px;
   height: 20px;
   margin-top: 18px;
+  transform: rotate(270deg);
+  filter: invert(97%) sepia(0%) saturate(768%) hue-rotate(300deg)
+    brightness(117%) contrast(100%);
 }

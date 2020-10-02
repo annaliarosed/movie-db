@@ -7,17 +7,19 @@ const TrendingMovie = ({ releaseDate, image, originalTitle, id, vote }) => {
   return (
     <div className="trending-movie">
       <p className="avg-vote">{vote}</p>
-      {image == null ? (
-        <img
-          id="no-photo"
-          src={`https://s3-ap-southeast-1.amazonaws.com/upcode/static/default-image.jpg`}
-          alt="fghjhg"
-        />
-      ) : (
-        <img src={`https://image.tmdb.org/t/p/w185${image}`} alt="fghjhg" />
-      )}
-      <p>{originalTitle}</p>
-      <p>{formattedReleaseDate}</p>
+      <div className="trending-movie-poster-wrapper">
+        {image ? (
+          <img
+            className="trending-movie-poster"
+            src={`https://image.tmdb.org/t/p/w185${image}`}
+            alt="movie poster"
+          />
+        ) : (
+          <p className="no-trending-movie">no image available</p>
+        )}
+      </div>
+      <p className="trending-movie-title">{originalTitle}</p>
+      <p className="trending-release-date">{formattedReleaseDate}</p>
     </div>
   );
 };

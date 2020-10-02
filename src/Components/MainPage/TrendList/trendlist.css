@@ -55,6 +55,7 @@
   flex-wrap: no-wrap;
   overflow: auto;
   margin-bottom: 75px;
+  margin-top: 20px;
 }
 
 .trending-movie-container::-webkit-scrollbar {

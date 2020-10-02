@@ -2,11 +2,11 @@ import React from "react";
 import "./header.css";
 import { Link } from "react-router-dom";
 
-const Header = (props) => {
+const Header = ({ title, setMovies }) => {
   return (
     <header className="header-container">
       <Link to="/" className="header">
-        <h1>{props.title}</h1>
+        <h1>{title}</h1>
       </Link>
     </header>
   );

@@ -23,24 +23,26 @@ const MovieCast = ({ id, APIKEY }) => {
     };
     fetchCredits();
   }, []);
-
+  console.log(credits);
   return (
-    <div className="movie-cast-container">
-      <h1>Movie Cast</h1>
-      <div className="movie-cast-cards">
-        {cast.map((item, index) => {
-          return (
-            <MovieCastCard
-              APIKEY={APIKEY}
-              key={index}
-              image={item.profile_path}
-              actorName={item.name}
-              characterName={item.character}
-            />
-          );
-        })}
+    cast.length > 0 && (
+      <div className="movie-cast-container">
+        <h1>Movie Cast</h1>
+        <div className="movie-cast-cards">
+          {cast.map((item, index) => {
+            return (
+              <MovieCastCard
+                APIKEY={APIKEY}
+                key={index}
+                image={item.profile_path}
+                actorName={item.name}
+                characterName={item.character}
+              />
+            );
+          })}
+        </div>
       </div>
-    </div>
+    )
   );
 };
 

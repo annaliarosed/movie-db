@@ -7,18 +7,17 @@ const Movie = ({ releaseDate, image, originalTitle, id, vote }) => {
   return (
     <div className="movie">
       <p className="avg-movie-vote">{vote}</p>
-      {image == null ? (
-        <img
-          id="no-photo"
-          src={`https://s3-ap-southeast-1.amazonaws.com/upcode/static/default-image.jpg`}
-          alt="not available"
-        />
-      ) : (
-        <img
-          src={`https://image.tmdb.org/t/p/w185${image}`}
-          alt="movie poster"
-        />
-      )}
+      <div className="movie-poster-wrapper">
+        {image ? (
+          <img
+            className="movie-poster"
+            src={`https://image.tmdb.org/t/p/w185${image}`}
+            alt="movie poster"
+          />
+        ) : (
+          <p className="no-movie">no image available</p>
+        )}
+      </div>
       <p className="movie-title">{originalTitle}</p>
       <p className="movie-release-date">{formattedReleaseDate}</p>
     </div>

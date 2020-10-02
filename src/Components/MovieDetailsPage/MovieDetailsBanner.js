@@ -14,8 +14,9 @@ const MovieDetailsBanner = ({ id, APIKEY }) => {
     `MM/DD/YYYY`
   );
   const styles = {
-    backgroundImage: `url(https://image.tmdb.org/t/p/w780${movieDetails.backdrop_path})`
+    backgroundImage: `url(https://image.tmdb.org/t/p/w780${movieDetails.backdrop_path})`,
   };
+  const bulletPoint = String.fromCharCode(8226);
 
   useEffect(() => {
     const fetchMovieDetails = async () => {
@@ -25,10 +26,14 @@ const MovieDetailsBanner = ({ id, APIKEY }) => {
       );
       const jsonData = await data.json();
       setMovieDetails(jsonData);
-      setGenres(jsonData.genres);
+      setGenres(jsonData.genres ? jsonData.genres : "no genres available");
       setTrailer(jsonData.videos.results[0]);
-      setRating(jsonData.release_dates.results.length !== 0 ? jsonData.release_dates.results.find((x) => x.iso_3166_1 === "US")
-      .release_dates[0] : ''
+      setRating(
+        jsonData.release_dates.results.length > 0 &&
+          jsonData.release_dates.results.find((x) => x.iso_3166_1 === "US")
+          ? jsonData.release_dates.results.find((x) => x.iso_3166_1 === "US")
+              .release_dates[0]
+          : ""
       );
     };
     fetchMovieDetails();
@@ -38,41 +43,60 @@ const MovieDetailsBanner = ({ id, APIKEY }) => {
     };
   }, []);
 
-  console.log(movieDetails);
+  //console.log(movieDetails);
 
   return (
-    <div className="banner-container" style={styles}>
+    <div
+      className={
+        movieDetails.backdrop_path
+          ? "banner-container"
+          : "no-movie-banner-container"
+      }
+      style={movieDetails.backdrop_path && styles}
+    >
       <div className="banner">
-        <img
-          id="movie-details-poster"
-          src={`https://image.tmdb.org/t/p/w342${movieDetails.poster_path}`}
-          alt="movie poster"
-        />
+        <div className="movie-details-poster-wrapper">
+          {movieDetails.poster_path ? (
+            <img
+              id="movie-details-poster"
+              src={`https://image.tmdb.org/t/p/w342${movieDetails.poster_path}`}
+              alt="movie poster"
+            />
+          ) : (
+            <p className="no-movie-poster">no image available</p>
+          )}
+        </div>
         <div className="banner-text">
           <h1 id="title">
-            {movieDetails.original_title} <span>({yearReleaseDate})</span>
+            {movieDetails.original_title}{" "}
+            {movieDetails.release_date && `(${yearReleaseDate})`}
           </h1>
           <div className="under-title-data">
-            <span id="rating">
+            <p id="rating">
               {rating.certification ? rating.certification : "N/A"}
-            </span>
-            <li>
-              <span>{formattedReleaseDate}</span>
-            </li>
-            <li>
-              {genres.map((item, index) => (
-                <span key={index} className="genre">
-                  {index === genres.length - 1
-                    ? `${item.name}`
+            </p>
+            <p>
+              {movieDetails.release_date &&
+                `${bulletPoint} ${formattedReleaseDate}`}
+            </p>
+            {genres &&
+              genres.map((item, index) => (
+                <p key={index}>
+                  {index === genres.length - 1 || genres.length === 1
+                    ? `${genres.length === 1 ? bulletPoint : ""} ${item.name}`
+                    : index === 0
+                    ? `${bulletPoint} ${item.name}${
+                        genres.length === 1 ? "" : ","
+                      }`
                     : `${item.name},`}
-                </span>
+                </p>
               ))}
-            </li>
-            <li>
-              <span>{movieDetails.runtime} minutes</span>
-            </li>
+            <p>
+              {movieDetails.runtime > 0 &&
+                `${bulletPoint} ${movieDetails.runtime} minutes`}
+            </p>
           </div>
-          <h1>Overview</h1>
+          <h1 id="overview">Overview</h1>
           <p className="overview">{movieDetails.overview}</p>
           <div className="buttons-wrapper">
             {trailer ? (
@@ -90,7 +114,7 @@ const MovieDetailsBanner = ({ id, APIKEY }) => {
                 Play trailer
               </a>
             ) : (
-              <span className="trailer">No trailer available</span>
+              <p className="no-trailer">No trailer available</p>
             )}
             <a
               className="play-movie"

@@ -19,7 +19,6 @@ const MainPage = ({ APIKEY }) => {
       { signal: myAbortController.signal }
     );
     const indMovies = await data.json();
-    console.log(indMovies.results);
     setMovies(indMovies.results);
     setSearchValue("");
     return () => {

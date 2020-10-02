@@ -35,11 +35,7 @@ const MovieCastCard = ({ image, actorName, characterName, APIKEY }) => {
             alt="movie poster"
           />
         ) : (
-          <img
-            id="no-photo-cast"
-            src={`https://s3-ap-southeast-1.amazonaws.com/upcode/static/default-image.jpg`}
-            alt="not available"
-          />
+          <p className="no-cast-photo">no image available</p>
         )}
         <div className="name-container">
           <h3 className="actor">{actorName}</h3>

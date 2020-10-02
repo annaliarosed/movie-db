@@ -14,7 +14,7 @@ const MovieDetailsBanner = ({ id, APIKEY }) => {
     `MM/DD/YYYY`
   );
   const styles = {
-    backgroundImage: `url(https://image.tmdb.org/t/p/w780${movieDetails.backdrop_path})`,
+    backgroundImage: `url(https://image.tmdb.org/t/p/w780${movieDetails.backdrop_path})`
   };
   const bulletPoint = String.fromCharCode(8226);
 

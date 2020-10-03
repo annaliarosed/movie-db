@@ -194,10 +194,16 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  transition: 0.2s;
 }
 
 .cast-card img {
   width: 100%;
+  transition: 0.2s;
+}
+
+.cast-card:hover {
+  border: 2px solid #ff7955;
 }
 
 .actor-link {
@@ -227,7 +233,6 @@
   flex: 1;
   font-family: sans-serif;
   height: 100px;
-  margin-bottom: 15px;
 }
 
 .actor {

@@ -25,7 +25,9 @@ const SearchBar = ({ caption, handleSubmit, searchValue, setSearchValue }) => {
             src="https://img.icons8.com/windows/32/000000/search.png"
           />
         </form>
-        <h6 className="caption">{caption}</h6>
+        <h6 className="caption">
+          Millions of movies, TV shows and people to discover. Explore now.
+        </h6>
       </div>
     </div>
   );

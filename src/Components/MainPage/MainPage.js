@@ -30,7 +30,6 @@ const MainPage = ({ APIKEY }) => {
   return (
     <div>
       <SearchBar
-        caption="Millions of movies, TV shows and people to discover. Explore now."
         handleSubmit={handleSubmit}
         searchValue={searchValue}
         setSearchValue={setSearchValue}

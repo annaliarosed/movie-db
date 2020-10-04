@@ -1,16 +1,16 @@
-.header-container {
+.header {
   display: flex;
   align-content: center;
   padding: 20px;
   max-width: 1250px;
-  width: 100%;
+  min-width: 600px;
+  width: 80vw;
   margin: 0 auto;
 }
 
-.header {
+.header-title {
   text-decoration: none;
   color: #493871;
   letter-spacing: 5px;
   line-height: 1;
 }
-  

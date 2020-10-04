@@ -71,4 +71,9 @@
 .trending-link {
   text-decoration: none;
   color: #493871;
+  outline: none;
+}
+
+.trending-link:focus {
+  text-decoration: underline double #ff7955;
 }

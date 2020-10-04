@@ -1,22 +1,15 @@
 import React, { useEffect, useState } from "react";
 
 const MovieCastCard = ({ image, actorName, characterName, APIKEY }) => {
-  const myAbortController = new AbortController();
   const [people, setPeople] = useState([]);
 
   useEffect(() => {
     const fetchPeople = async () => {
       const personResponse = await fetch(
-        `https://api.themoviedb.org/3/search/person?api_key=${APIKEY}&page=1&query=${actorName}`,
-        { signal: myAbortController.signal }
+        `https://api.themoviedb.org/3/search/person?api_key=${APIKEY}&page=1&query=${actorName}`
       );
       const jsonResponse = await personResponse.json();
       setPeople(jsonResponse.results[0]);
-
-      return () => {
-        console.log("Component unmounted");
-        myAbortController.abort();
-      };
     };
     fetchPeople();
   }, [actorName]);

@@ -3,7 +3,6 @@ import moment from "moment";
 import { useState, useEffect } from "react";
 
 const MovieDetailsBanner = ({ id, APIKEY }) => {
-  const myAbortController = new AbortController();
   const [movieDetails, setMovieDetails] = useState({});
   const [genres, setGenres] = useState([]);
   const [trailer, setTrailer] = useState({});
@@ -14,15 +13,14 @@ const MovieDetailsBanner = ({ id, APIKEY }) => {
     `MM/DD/YYYY`
   );
   const styles = {
-    backgroundImage: `url(https://image.tmdb.org/t/p/w780${movieDetails.backdrop_path})`
+    backgroundImage: `url(https://image.tmdb.org/t/p/w780${movieDetails.backdrop_path})`,
   };
   const bulletPoint = String.fromCharCode(8226);
 
   useEffect(() => {
     const fetchMovieDetails = async () => {
       const data = await fetch(
-        `https://api.themoviedb.org/3/movie/${id}?api_key=${APIKEY}&append_to_response=videos,release_dates`,
-        { signal: myAbortController.signal }
+        `https://api.themoviedb.org/3/movie/${id}?api_key=${APIKEY}&append_to_response=videos,release_dates`
       );
       const jsonData = await data.json();
       setMovieDetails(jsonData);
@@ -37,10 +35,6 @@ const MovieDetailsBanner = ({ id, APIKEY }) => {
       );
     };
     fetchMovieDetails();
-    return () => {
-      console.log("Component unmounted");
-      myAbortController.abort();
-    };
   }, []);
 
   //console.log(movieDetails);

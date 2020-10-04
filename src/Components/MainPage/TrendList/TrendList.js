@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import "./trendlist.css";
 
 const TrendList = ({ APIKEY }) => {
-  const myAbortController = new AbortController();
   const [trendingMovies, setTrendingMovies] = useState([]);
   const [isDay, setIsDay] = useState(true);
 
@@ -14,16 +13,10 @@ const TrendList = ({ APIKEY }) => {
       const data = await fetch(
         `https://api.themoviedb.org/3/trending/movie/${
           isDay ? "day" : "week"
-        }?api_key=${APIKEY}`,
-        { signal: myAbortController.signal }
+        }?api_key=${APIKEY}`
       );
       const jsonData = await data.json();
       setTrendingMovies(jsonData.results);
-
-      return () => {
-        console.log("Component unmounted");
-        myAbortController.abort();
-      };
     };
     getTrending();
   }, [APIKEY, isDay]);

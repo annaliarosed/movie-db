@@ -8,7 +8,7 @@ const SearchBar = ({ caption, handleSubmit, searchValue, setSearchValue }) => {
 
   return (
     <div className="input-container">
-      <form className="form-container" onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <input
           placeholder="Search..."
           className="search-bar"

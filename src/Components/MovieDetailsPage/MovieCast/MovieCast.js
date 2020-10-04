@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import MovieCastCard from "./MovieCastCard";
+import "./moviecast.css";
 
 const MovieCast = ({ id, APIKEY }) => {
   const [credits, setCredits] = useState({});

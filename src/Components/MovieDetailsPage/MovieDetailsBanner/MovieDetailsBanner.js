@@ -1,6 +1,7 @@
 import React from "react";
 import moment from "moment";
 import { useState, useEffect } from "react";
+import "./moviedetailsbanner.css";
 
 const MovieDetailsBanner = ({ id, APIKEY }) => {
   const [movieDetails, setMovieDetails] = useState({});
@@ -36,8 +37,6 @@ const MovieDetailsBanner = ({ id, APIKEY }) => {
     };
     fetchMovieDetails();
   }, []);
-
-  //console.log(movieDetails);
 
   return (
     <div

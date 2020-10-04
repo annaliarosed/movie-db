@@ -1,7 +1,8 @@
 import React from "react";
 import moment from "moment";
+import "./trendingmovie.css";
 
-const TrendingMovie = ({ releaseDate, image, originalTitle, id, vote }) => {
+const TrendingMovie = ({ releaseDate, image, originalTitle, vote }) => {
   const formattedReleaseDate = moment(releaseDate).format(`MMM D, YYYY`);
 
   return (

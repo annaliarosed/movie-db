@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "./moviecastcard.css";
 
 const MovieCastCard = ({ image, actorName, characterName, APIKEY }) => {
   const [people, setPeople] = useState([]);

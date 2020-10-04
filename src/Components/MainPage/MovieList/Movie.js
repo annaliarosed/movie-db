@@ -1,5 +1,6 @@
 import React from "react";
 import moment from "moment";
+import "./movie.css";
 
 const Movie = ({ releaseDate, image, originalTitle, vote }) => {
   const formattedReleaseDate = moment(releaseDate).format(`MMM D, YYYY`);

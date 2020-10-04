@@ -90,7 +90,7 @@ const MovieDetailsBanner = ({ id, APIKEY }) => {
             </p>
           </div>
           <h1 id="overview">Overview</h1>
-          <p className="overview">{movieDetails.overview}</p>
+          <p>{movieDetails.overview}</p>
           <div className="buttons-wrapper">
             {trailer ? (
               <a
@@ -107,7 +107,9 @@ const MovieDetailsBanner = ({ id, APIKEY }) => {
                 Play trailer
               </a>
             ) : (
-              <p className="no-trailer">No trailer available</p>
+              <p className="trailer" id="no-trailer">
+                No trailer available
+              </p>
             )}
             <a
               className="play-movie"

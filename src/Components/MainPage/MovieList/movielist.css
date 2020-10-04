@@ -35,6 +35,9 @@
 .link {
   text-decoration: none;
   color: #493871;
+  outline: none;
 }
 
-
+.link:focus {
+  text-decoration: underline double #ff7955;
+}

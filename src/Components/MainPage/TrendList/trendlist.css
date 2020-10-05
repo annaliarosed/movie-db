@@ -12,14 +12,14 @@
 
 .trending-title {
   margin-right: 30px;
-  color: #493871;
+  color: var(--purple);
 }
 
 .btn {
   font-family: "Oswald", sans-serif;
   background-color: transparent;
-  color: #493871;
-  border: 2px solid #493871;
+  color: var(--purple);
+  border: 2px solid var(--purple);
   padding: 9px;
   letter-spacing: 5px;
   border-radius: 10px;
@@ -43,9 +43,9 @@
 }
 
 .active {
-  background-color: #ff7955;
-  border: 1px solid #ff7955;
-  color: #fff;
+  background-color: var(--orange);
+  border: 1px solid var(--orange);
+  color: white;
 }
 
 .trending-movie-container {
@@ -62,7 +62,7 @@
 }
 
 .trending-movie-container::-webkit-scrollbar-thumb {
-  background-color: #ff7955;
+  background-color: var(--orange);
   border-radius: 9px;
   background-clip: content-box;
   width: 5px;
@@ -70,10 +70,10 @@
 
 .trending-link {
   text-decoration: none;
-  color: #493871;
+  color: var(--purple);
   outline: none;
 }
 
 .trending-link:focus {
-  text-decoration: underline double #ff7955;
+  text-decoration: underline double var(--orange);
 }

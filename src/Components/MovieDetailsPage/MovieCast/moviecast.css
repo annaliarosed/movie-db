@@ -8,7 +8,7 @@
 
 .movie-cast-title {
   text-transform: uppercase;
-  color: #493871;
+  color: var(--purple);
 }
 
 .movie-cast-cards {
@@ -24,7 +24,7 @@
 }
 
 .movie-cast-cards::-webkit-scrollbar-thumb {
-  background-color: #ff7955;
+  background-color: var(--orange);
   border-radius: 9px;
   background-clip: content-box;
   width: 5px;

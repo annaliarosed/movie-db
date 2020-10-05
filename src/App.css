@@ -3,13 +3,13 @@ body {
   font-family: "Oswald", sans-serif;
   color: #0f1843;
   text-decoration: none;
-  background-color: #fff4f8;
+  background-color: var(--background-pink);
 }
 
-/*
-orange - #FF7955  (255,121,85)
-pink - #F4327F  (244,50,127)
-purple - #493871 (73,56,113)
-backgroundcolor - #fff4f8
-light pink - #ffc0d7 (255,192,215)
-*/
+:root {
+  --orange: #ff7955;
+  --pink: #f4327f;
+  --purple: #493871;
+  --light-pink: #ffc0d7;
+  --background-pink: #fff4f8;
+}

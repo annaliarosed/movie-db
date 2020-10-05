@@ -1,7 +1,7 @@
 .cast-card {
   text-decoration: none;
   cursor: pointer;
-  color: #493871;
+  color: var(--purple);
   margin: 10px;
   flex: 0 0 auto;
   border-radius: 5px;
@@ -10,18 +10,18 @@
 }
 
 .cast-card:hover {
-  border: 2px solid #ff7955;
+  border: 2px solid var(--orange);
 }
 
 .cast-card:focus {
-  border: 2px solid #ff7955;
+  border: 2px solid var(--orange);
 }
 
 .no-cast-photo {
   height: 285px;
   width: 190px;
   text-transform: uppercase;
-  background-color: #ff7955;
+  background-color: var(--orange);
   color: white;
   display: flex;
   justify-content: center;

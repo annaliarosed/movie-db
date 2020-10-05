@@ -11,7 +11,7 @@
 .header-title {
   text-transform: uppercase;
   text-decoration: none;
-  color: #493871;
+  color: var(--purple);
   letter-spacing: 5px;
   line-height: 1;
 }

@@ -36,7 +36,7 @@
   height: 100%;
   width: 342px;
   text-transform: uppercase;
-  border: 2px solid#FF7955;
+  border: 2px solid var(--orange);
   color: white;
   display: flex;
   justify-content: center;
@@ -84,7 +84,7 @@
 
 .trailer {
   text-decoration: none;
-  color: #493871;
+  color: var(--purple);
   font-weight: bold;
   background-color: rgba(255, 192, 215, 0.9);
   padding: 10px;
@@ -100,19 +100,19 @@
 }
 
 .trailer:hover {
-  background-color: #ffc0d7;
+  background-color: var(--light-pink);
   transition: 0.3s;
 }
 
 .trailer:focus {
   background-color: rgba(73, 56, 113, 0.8);
-  color: #fff4f8;
+  color: var(--background-pink);
   transition: none;
 }
 
 .play-movie {
   text-decoration: none;
-  color: #493871;
+  color: var(--purple);
   font-weight: bold;
   background-color: rgba(255, 192, 215, 0.9);
   padding: 10px;
@@ -127,12 +127,12 @@
 }
 
 .play-movie:hover {
-  background-color: #ffc0d7;
+  background-color: var(--light-pink);
   transition: 0.3s;
 }
 
 .play-movie:focus {
   background-color: rgba(73, 56, 113, 0.8);
-  color: #fff4f8;
+  color: var(--background-pink);
   transition: none;
 }

@@ -9,7 +9,7 @@ const App = () => {
   const APIKEY = "3aece1730ec57334758cdeb57c0d6adb";
   return (
     <>
-      <Header title="MOVIE DATABASE" />
+      <Header title="movie database" />
       <Switch>
         <Route exact path="/">
           <MainPage APIKEY={APIKEY} />

@@ -9,6 +9,7 @@
 }
 
 .header-title {
+  text-transform: uppercase;
   text-decoration: none;
   color: #493871;
   letter-spacing: 5px;

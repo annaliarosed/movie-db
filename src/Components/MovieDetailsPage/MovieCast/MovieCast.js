@@ -15,7 +15,7 @@ const MovieCast = ({ id, APIKEY }) => {
       setCredits(jsonResponse.cast);
     };
     fetchCredits();
-  }, []);
+  }, [id]);
   console.log(credits);
   return (
     cast.length > 0 && (

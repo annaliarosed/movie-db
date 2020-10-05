@@ -5,6 +5,8 @@ import MovieDetails from "./Components/MovieDetailsPage/MovieDetails";
 import MainPage from "./Components/MainPage/MainPage";
 import Header from "./Components/MainPage/Header/Header";
 
+//export const ThemeContext = React.createContext();
+
 const App = () => {
   const APIKEY = "3aece1730ec57334758cdeb57c0d6adb";
   return (

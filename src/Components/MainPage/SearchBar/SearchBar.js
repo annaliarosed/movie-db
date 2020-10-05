@@ -1,14 +1,14 @@
 import React from "react";
 import "./searchbar.css";
 
-const SearchBar = ({ caption, handleSubmit, searchValue, setSearchValue }) => {
+const SearchBar = ({ caption, onSubmit, searchValue, setSearchValue }) => {
   const handleChange = (e) => {
     setSearchValue(e.target.value);
   };
 
   return (
     <div className="input-container">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={onSubmit}>
         <input
           placeholder="Search..."
           className="search-bar"
@@ -17,7 +17,7 @@ const SearchBar = ({ caption, handleSubmit, searchValue, setSearchValue }) => {
           onChange={handleChange}
         />
         <img
-          onClick={handleSubmit}
+          onClick={onSubmit}
           type="submit"
           className="search-logo"
           alt="search logo"

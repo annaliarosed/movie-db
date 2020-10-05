@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import SearchBar from "./SearchBar/SearchBar";
 import MovieList from "./MovieList/MovieList";
 import TrendList from "./TrendList/TrendList";
+//import { ThemeContext } from "./App";
 
 const MainPage = ({ APIKEY }) => {
   const [movies, setMovies] = useState([]);
@@ -24,7 +25,7 @@ const MainPage = ({ APIKEY }) => {
   return (
     <div>
       <SearchBar
-        handleSubmit={handleSubmit}
+        onSubmit={handleSubmit}
         searchValue={searchValue}
         setSearchValue={setSearchValue}
       />

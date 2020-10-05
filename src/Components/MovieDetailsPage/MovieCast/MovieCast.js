@@ -16,23 +16,21 @@ const MovieCast = ({ id, APIKEY }) => {
     };
     fetchCredits();
   }, [id]);
-  console.log(credits);
+
   return (
     cast.length > 0 && (
       <div className="movie-cast-container">
         <h1 className="movie-cast-title">Movie Cast</h1>
         <div className="movie-cast-cards">
-          {cast.map((item, index) => {
-            return (
-              <MovieCastCard
-                APIKEY={APIKEY}
-                key={index}
-                image={item.profile_path}
-                actorName={item.name}
-                characterName={item.character}
-              />
-            );
-          })}
+          {cast.map((item) => (
+            <MovieCastCard
+              APIKEY={APIKEY}
+              key={item.cast_id}
+              image={item.profile_path}
+              actorName={item.name}
+              characterName={item.character}
+            />
+          ))}
         </div>
       </div>
     )

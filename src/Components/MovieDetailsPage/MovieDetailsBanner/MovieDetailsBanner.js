@@ -38,6 +38,8 @@ const MovieDetailsBanner = ({ id, APIKEY }) => {
     fetchMovieDetails();
   }, []);
 
+  console.log(genres);
+
   return (
     <div
       className={
@@ -74,7 +76,7 @@ const MovieDetailsBanner = ({ id, APIKEY }) => {
             </p>
             {genres &&
               genres.map((item, index) => (
-                <p key={index}>
+                <p key={item.id}>
                   {index === genres.length - 1 || genres.length === 1
                     ? `${genres.length === 1 ? bulletPoint : ""} ${item.name}`
                     : index === 0

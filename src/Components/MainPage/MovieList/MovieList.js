@@ -21,19 +21,17 @@ const MovieList = ({ movies }) => {
           Search Results
         </h1>
         <div className="movie-container">
-          {movies.map((movie, index) => {
-            return (
-              <Link to={`/movie/${movie.id}`} key={index} className="link">
-                <Movie
-                  vote={movie.vote_average}
-                  image={movie.poster_path}
-                  originalTitle={movie.original_title}
-                  releaseDate={movie.release_date}
-                  id={movie.id}
-                />
-              </Link>
-            );
-          })}
+          {movies.map((movie) => (
+            <Link to={`/movie/${movie.id}`} key={movie.id} className="link">
+              <Movie
+                vote={movie.vote_average}
+                image={movie.poster_path}
+                originalTitle={movie.original_title}
+                releaseDate={movie.release_date}
+                id={movie.id}
+              />
+            </Link>
+          ))}
         </div>
       </div>
     )

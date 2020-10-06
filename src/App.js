@@ -5,21 +5,23 @@ import MovieDetails from "./Components/MovieDetailsPage/MovieDetails";
 import MainPage from "./Components/MainPage/MainPage";
 import Header from "./Components/MainPage/Header/Header";
 
-//export const ThemeContext = React.createContext();
+export const ThemeContext = React.createContext();
 
 const App = () => {
   const APIKEY = "3aece1730ec57334758cdeb57c0d6adb";
   return (
     <>
-      <Header title="movie database" />
-      <Switch>
-        <Route exact path="/">
-          <MainPage APIKEY={APIKEY} />
-        </Route>
-        <Route path="/movie/:movieId">
-          <MovieDetails APIKEY={APIKEY} />
-        </Route>
-      </Switch>
+      <ThemeContext.Provider value={APIKEY}>
+        <Header title="movie database" />
+        <Switch>
+          <Route exact path="/">
+            <MainPage />
+          </Route>
+          <Route path="/movie/:movieId">
+            <MovieDetails />
+          </Route>
+        </Switch>
+      </ThemeContext.Provider>
     </>
   );
 };

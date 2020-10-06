@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import SearchBar from "./SearchBar/SearchBar";
 import MovieList from "./MovieList/MovieList";
 import TrendList from "./TrendList/TrendList";
-//import { ThemeContext } from "./App";
+import { ThemeContext } from "../../App";
 
-const MainPage = ({ APIKEY }) => {
+const MainPage = () => {
   const [movies, setMovies] = useState([]);
   const [searchValue, setSearchValue] = useState("");
+  const APIKEY = useContext(ThemeContext);
 
   const handleSubmit = async (e) => {
     if (!searchValue) {
@@ -30,7 +31,7 @@ const MainPage = ({ APIKEY }) => {
         setSearchValue={setSearchValue}
       />
       <MovieList movies={movies} />
-      <TrendList APIKEY={APIKEY} />
+      <TrendList />
     </div>
   );
 };

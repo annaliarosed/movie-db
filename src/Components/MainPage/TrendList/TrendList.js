@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import TrendingMovie from "./TrendingMovie";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./trendlist.css";
+import { ThemeContext } from "../../../App";
 
-const TrendList = ({ APIKEY }) => {
+const TrendList = () => {
   const [trendingMovies, setTrendingMovies] = useState([]);
   const [isDay, setIsDay] = useState(true);
+  const APIKEY = useContext(ThemeContext);
 
   useEffect(() => {
     const getTrending = async () => {

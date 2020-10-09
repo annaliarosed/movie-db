@@ -1,6 +1,5 @@
 {
   "name": "movie-db",
-  "homepage": "passport.bike/demos",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

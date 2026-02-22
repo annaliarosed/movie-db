@@ -25,6 +25,6 @@ This project was chosen in order to provide people with a fun experience while s
 - I replaced all default focused styling and customized it for a more uniqe experience and for optimal keyboard accessibility. 
 
 
-#### [Experience it live here](https://movie-db-f2a5vr4r1.vercel.app/)
+#### [Experience it live here](https://movie-db-xi.vercel.app/)
 
 <img height="400" width="400" src="https://user-images.githubusercontent.com/56635645/120077952-a385ca80-c0b5-11eb-9c9a-18c6253a607e.png" />

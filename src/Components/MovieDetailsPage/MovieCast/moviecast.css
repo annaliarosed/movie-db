@@ -15,6 +15,7 @@
   display: flex;
   flex-wrap: no-wrap;
   overflow: auto;
+  padding-top: 20px;
 }
 
 .movie-cast-cards::-webkit-scrollbar {
